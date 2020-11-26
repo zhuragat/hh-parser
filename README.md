@@ -39,6 +39,7 @@ curl localhost:5000/parse | json_pp
 <br/>
 
 <br/>
+
 Then you can use these data
 * to get all vacancies with title, salary, company, location, date
 * to calculate average salary depending on years of experience
@@ -90,7 +91,6 @@ curl localhost:5000/vacancies | json_pp
 ```console
 curl localhost:5000/experience | json_pp
 ```
-<br/>
 
 ![alt text](files/experience.png)
 
@@ -100,8 +100,6 @@ curl localhost:5000/experience | json_pp
 curl localhost:5000/trend | json_pp
 ```
 
-<br/>
-
 ![alt text](files/trends.png)
 
 <br/>
@@ -109,8 +107,5 @@ curl localhost:5000/trend | json_pp
 ```console
 curl localhost:5000/appearance | json_pp
 ```
-<br/>
 
 ![alt text](files/appearance.png)
-
-<br/>
