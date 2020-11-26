@@ -49,13 +49,21 @@ curl localhost:5000/vacancies | json_pp
 ``
 
 ``
-curl localhost:5000/experieence | json_pp
+curl localhost:5000/experience | json_pp
 ``
+<br/>
+![alt text](files/experience.png)
+<br/>
 
 ``
 curl localhost:5000/trend | json_pp
 ``
-
+<br/>
+![alt text](files/trends.png)
+<br/>
 ``
 curl localhost:5000/appearance | json_pp
 ``
+<br/>
+![alt text](files/appearance.png)
+<br/>
