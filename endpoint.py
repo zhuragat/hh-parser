@@ -30,7 +30,7 @@ class Vacancy(Resource):
 
     @app.route('/vacancies', methods=['GET'])
     def get_all_vacancies():
-        data = read_csv('all_vacancies.csv')
+        data = read_csv('files/all_vacancies.csv')
         return json.dumps({"data":data}, ensure_ascii=False), 200, {'Content-Type': 'application/json'} 
 
     @app.route('/experience', methods=['GET'])
