@@ -30,11 +30,14 @@ It will run on http://localhost:5000
 
 ## How it works?
 
-Firstly you need to make an http get request to parse vacancies. It creates several csv files ('all_vacancies.csv', 'no_experience_vacancies.csv', 'experience_1_and_3_vacancies.csv', 'experience_3_and_6_vacancies.csv', 'experience_more_than_6_vacancies.csv')
+Firstly you need to make an HTTP GET request to parse vacancies. It creates several CSV files ('all_vacancies.csv', 'no_experience_vacancies.csv', 'experience_1_and_3_vacancies.csv', 'experience_3_and_6_vacancies.csv', 'experience_more_than_6_vacancies.csv')
+<br/>
 <br/>
 ``
 curl localhost:5000/parse | json_pp
 ``
+<br/>
+
 <br/>
 Then you can use these data
 * to get all vacancies with title, salary, company, location, date
@@ -42,19 +45,54 @@ Then you can use these data
 * to determine the most popular vacancies on the website
 * to figure out the number of vacancies appearing on the website
 
-For each of them except the first, there are exists endpoints that create .png files with graphs:
+For each of them except the first, there are exists endpoints that create PNG files with graphs:
 <br/>
 ``
 curl localhost:5000/vacancies | json_pp
 ``
-
+<br/>
+```json
+{
+    "data": [
+        [
+            "Системный администратор",
+            "250 000-300 000 KZT",
+            "ТОО Qazaq National Product",
+            "Нур-Султан",
+            "26 ноября"
+        ],
+        [
+            "ИТ-менеджер",
+            "400 000-550 000 KZT",
+            "",
+            "Нур-Султан",
+            "20 ноября"
+        ],
+    ............
+            [
+            "Монтажник слаботочных систем",
+            "от 100 000 KZT",
+            "ТОО Легион-М",
+            "Алматы",
+            "12 ноября"
+        ],
+        [
+            "Инженер-электронщик (Алматы)",
+            "от 150 000 KZT",
+            "ТОО Компания Холодом",
+            "Алматы",
+            "16 ноября"
+        ]
+    ]
+}
+```
+<br/>
 ``
 curl localhost:5000/experience | json_pp
 ``
 <br/>
 ![alt text](files/experience.png)
 <br/>
-
 ``
 curl localhost:5000/trend | json_pp
 ``
