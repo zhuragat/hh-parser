@@ -19,10 +19,10 @@ def average(lst):
     return sum(lst) / len(lst)
 
 def visualize_average_salary():
-    no_experience = numpy.transpose(read_csv('no_experience_vacancies.csv')).tolist()
-    between1and3 = numpy.transpose(read_csv('experience_1_and_3_vacancies.csv')).tolist()
-    between3and6 = numpy.transpose(read_csv('experience_3_and_6_vacancies.csv')).tolist()
-    more_than6 = numpy.transpose(read_csv('experience_more_than_6_vacancies.csv')).tolist()
+    no_experience = numpy.transpose(read_csv('files/no_experience_vacancies.csv')).tolist()
+    between1and3 = numpy.transpose(read_csv('files/experience_1_and_3_vacancies.csv')).tolist()
+    between3and6 = numpy.transpose(read_csv('files/experience_3_and_6_vacancies.csv')).tolist()
+    more_than6 = numpy.transpose(read_csv('files/experience_more_than_6_vacancies.csv')).tolist()
     list1 = convertSalaries(no_experience[1]) if len(no_experience) > 2 else []
     list2 = convertSalaries(between1and3[1]) if len(between1and3) > 2 else []
     list3 = convertSalaries(between3and6[1]) if len(between3and6) > 2 else []
@@ -38,10 +38,10 @@ def visualize_average_salary():
     plt.xticks(directions)
     plt.yticks(salaries)
     plt.title('Average salary depending on years of experience in tenge') 
-    plt.savefig('experience.png')
+    plt.savefig('files/experience.png')
 
 def visualize_trending_jobs():
-    all_vacancies = numpy.transpose(read_csv('all_vacancies.csv')).tolist()
+    all_vacancies = numpy.transpose(read_csv('files/all_vacancies.csv')).tolist()
     titles = all_vacancies[0] if len(all_vacancies) > 2 else []
     
     java = sum('java' in s.lower() for s in titles)
@@ -60,10 +60,10 @@ def visualize_trending_jobs():
     plt.xticks(languages)
     plt.yticks(number)
     plt.title('The most popular programming languages over the last month') 
-    plt.savefig('trends.png')
+    plt.savefig('files/trends.png')
     
 def visualize_job_appearances(): 
-    all_vacancies = numpy.transpose(read_csv('all_vacancies.csv')).tolist()
+    all_vacancies = numpy.transpose(read_csv('files/all_vacancies.csv')).tolist()
     dates = all_vacancies[4] if len(all_vacancies) > 2 else []
     dates = [re.sub('[^\d.]', '', x) for x in dates if 'ноября' in x]
     dates = sorted(dates, key= lambda x: int(x))
@@ -77,5 +77,5 @@ def visualize_job_appearances():
     plt.bar(date, number)
     plt.xticks(date,fontsize=10, rotation=90)
     plt.yticks()
-    plt.title('Job appearences over the last month (November)') 
-    plt.savefig('appearence.png')
+    plt.title('Job appearances over the last month (November)') 
+    plt.savefig('files/appearance.png')

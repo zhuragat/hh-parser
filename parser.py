@@ -55,7 +55,7 @@ def create(basic_url, file_name):
     df = pd.DataFrame(list(zip(titles, salaries, companies, locations, dates)),
                       columns=['Title', 'Salary', 'Company', 'Location', 'Date'])
 
-    df.to_csv(file_name, index=False, sep=';', encoding='utf-8')
+    df.to_csv('files/' + file_name, index=False, sep=';', encoding='utf-8')
     print('Successfully finished')
     
 def read_csv(file_path):
