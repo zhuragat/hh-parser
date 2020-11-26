@@ -13,9 +13,9 @@ These instructions allow you to run a copy of the project on your local machine 
 1. Download the entire repository.
 2. Place the hh-parser directory in your Python environment.
 3. Go to the hh-parser directory and do the following:
-``
+```console
 pip install -r requirements.txt
-``
+```
 
 If this is the first time, select the suggested configuration.
 At any time in the future, you can easily run the configuration to apply the changes.
@@ -33,9 +33,9 @@ It will run on http://localhost:5000
 Firstly you need to make an HTTP GET request to parse vacancies. It creates several CSV files ('all_vacancies.csv', 'no_experience_vacancies.csv', 'experience_1_and_3_vacancies.csv', 'experience_3_and_6_vacancies.csv', 'experience_more_than_6_vacancies.csv')
 <br/>
 <br/>
-``
+```console
 curl localhost:5000/parse | json_pp
-``
+```
 <br/>
 
 <br/>
@@ -46,11 +46,9 @@ Then you can use these data
 * to figure out the number of vacancies appearing on the website
 
 For each of them except the first, there are exists endpoints that create PNG files with graphs:
-<br/>
-``
+```console
 curl localhost:5000/vacancies | json_pp
-``
-<br/>
+```
 ```json
 {
     "data": [
@@ -68,7 +66,7 @@ curl localhost:5000/vacancies | json_pp
             "Нур-Султан",
             "20 ноября"
         ],
-    ............
+        .........
             [
             "Монтажник слаботочных систем",
             "от 100 000 KZT",
@@ -86,22 +84,33 @@ curl localhost:5000/vacancies | json_pp
     ]
 }
 ```
+
 <br/>
-``
+
+```console
 curl localhost:5000/experience | json_pp
-``
+```
 <br/>
+
 ![alt text](files/experience.png)
+
 <br/>
-``
+
+```console
 curl localhost:5000/trend | json_pp
-``
+```
+
 <br/>
+
 ![alt text](files/trends.png)
+
 <br/>
-``
+
+```console
 curl localhost:5000/appearance | json_pp
-``
+```
 <br/>
+
 ![alt text](files/appearance.png)
+
 <br/>
