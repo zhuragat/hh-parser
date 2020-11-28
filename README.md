@@ -37,12 +37,11 @@ Firstly you need to make an HTTP GET request to parse vacancies. You can pass a 
 * Karaganda, if you type 'kgd'
 * By default, it is 'kz'
 
-It creates several CSV files ('all_vacancies.csv', 'no_experience_vacancies.csv', 'experience_1_and_3_vacancies.csv', 'experience_3_and_6_vacancies.csv', 'experience_more_than_6_vacancies.csv')
-<br/>
-
 ```
 curl 'localhost:5000/parse?area=kz' | json_pp
 ```
+
+It creates several CSV files ('all_vacancies.csv', 'no_experience_vacancies.csv', 'experience_1_and_3_vacancies.csv', 'experience_3_and_6_vacancies.csv', 'experience_more_than_6_vacancies.csv')
 
 <br/>
 
