@@ -41,7 +41,7 @@ It creates several CSV files ('all_vacancies.csv', 'no_experience_vacancies.csv'
 <br/>
 
 ```
-curl localhost:5000/parse | json_pp
+curl 'localhost:5000/parse?area=kz' | json_pp
 ```
 
 <br/>
@@ -55,7 +55,7 @@ Then you can use these data
 For each of them besides the first, there are endpoints that create PNG files with graphs:
 
 ```console
-curl 'localhost:5000/vacancies?area=kz' | json_pp
+curl localhost:5000/vacancies | json_pp
 ```
 
 ```json
