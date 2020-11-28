@@ -40,10 +40,9 @@ Firstly you need to make an HTTP GET request to parse vacancies. You can pass a 
 It creates several CSV files ('all_vacancies.csv', 'no_experience_vacancies.csv', 'experience_1_and_3_vacancies.csv', 'experience_3_and_6_vacancies.csv', 'experience_more_than_6_vacancies.csv')
 <br/>
 
-``
+```
 curl localhost:5000/parse | json_pp
 ```
-<br/>
 
 <br/>
 
@@ -54,9 +53,11 @@ Then you can use these data
 * to figure out the number of vacancies appearing on the website
 
 For each of them besides the first, there are endpoints that create PNG files with graphs:
+
 ```console
 curl 'localhost:5000/vacancies?area=kz' | json_pp
 ```
+
 ```json
 {
     "data": [
