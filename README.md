@@ -30,14 +30,14 @@ It will run on http://localhost:5000
 
 ## How it works?
 
-Firstly you need to make an http get request to parse vacancies. You can pass a value for the parameter called 'area' to get vacancies from:
+Firstly you need to make an HTTP GET request to parse vacancies. You can pass a value for the parameter called 'area' to get vacancies from:
 * Kazakhstan, if you type 'kz'
 * Almaty, if you type 'alm'
 * Nur-Sultan, if you type 'ast'
 * Karaganda, if you type 'kgd'
 * By default, it is 'kz'
 
-It creates several csv files ('all_vacancies.csv', 'no_experience_vacancies.csv', 'experience_1_and_3_vacancies.csv', 'experience_3_and_6_vacancies.csv', 'experience_more_than_6_vacancies.csv')
+It creates several CSV files ('all_vacancies.csv', 'no_experience_vacancies.csv', 'experience_1_and_3_vacancies.csv', 'experience_3_and_6_vacancies.csv', 'experience_more_than_6_vacancies.csv')
 <br/>
 
 ``
@@ -53,9 +53,9 @@ Then you can use these data
 * to determine the most popular vacancies on the website
 * to figure out the number of vacancies appearing on the website
 
-For each of them except the first, there are exists endpoints that create PNG files with graphs:
+For each of them besides the first, there are endpoints that create PNG files with graphs:
 ```console
-curl localhost:5000/vacancies | json_pp
+curl 'localhost:5000/vacancies?area=kz' | json_pp
 ```
 ```json
 {
@@ -83,11 +83,11 @@ curl localhost:5000/vacancies | json_pp
             "16 ноября"
         ],
         [
-            "Backend Разработчик Django",
-            "200 000-500 000 KZT",
-            "ТОО TAKLIMAKAN C.I.G.",
-            "Алматы",
-            "9 ноября"
+           "Frontend / backend разработчик",
+           "150 000-250 000 KZT",
+           "ИП ЦЕХ",
+           "Шымкент",
+           "20 ноября"
         ]
     ]
 }
