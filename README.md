@@ -37,7 +37,7 @@ Firstly you need to make an HTTP GET request to parse vacancies. You can pass a 
 * Karaganda, if you type 'kgd'
 * By default, it is 'kz'
 
-```
+```console
 curl 'localhost:5000/parse?area=kz' | json_pp
 ```
 
