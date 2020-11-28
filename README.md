@@ -30,8 +30,16 @@ It will run on http://localhost:5000
 
 ## How it works?
 
-Firstly you need to make an http get request to parse vacancies. It creates several csv files ('all_vacancies.csv', 'no_experience_vacancies.csv', 'experience_1_and_3_vacancies.csv', 'experience_3_and_6_vacancies.csv', 'experience_more_than_6_vacancies.csv')
+Firstly you need to make an http get request to parse vacancies. You can pass a value for the parameter called 'area' to get vacancies from:
+* Kazakhstan, if you type 'kz'
+* Almaty, if you type 'alm'
+* Nur-Sultan, if you type 'ast'
+* Karaganda, if you type 'kgd'
+* By default, it is 'kz'
+
+It creates several csv files ('all_vacancies.csv', 'no_experience_vacancies.csv', 'experience_1_and_3_vacancies.csv', 'experience_3_and_6_vacancies.csv', 'experience_more_than_6_vacancies.csv')
 <br/>
+
 ``
 curl localhost:5000/parse | json_pp
 ``

@@ -3,6 +3,8 @@ import re
 from parser import read_csv
 import matplotlib.pyplot as plt
 
+# convert salary values from string type to int
+# skip if it is not a string and salary not in tenge
 def convertSalaries(salary_list):
     res_salaries = []
     for salary in salary_list:
@@ -58,7 +60,7 @@ def visualize_trending_jobs():
     number = [java, php, python, sql, android, js, ios, c1, devops]
     plt.bar(languages, number)
     plt.xticks(languages)
-    plt.yticks(number)
+    plt.yticks()
     plt.title('The most popular programming languages over the last month') 
     plt.savefig('files/trends.png')
     
@@ -73,7 +75,6 @@ def visualize_job_appearances():
 
     date = [*frequency]
     number = list(frequency.values())
-
     plt.bar(date, number)
     plt.xticks(date,fontsize=10, rotation=90)
     plt.yticks()

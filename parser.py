@@ -7,6 +7,7 @@ import pandas as pd
 import math
 import csv
 
+# find the number of pages for a pagination
 def find_page_number(url):
     html = requests.get(url, headers={'User-Agent': 'Custom'})
     soup = BeautifulSoup(html.text, 'html.parser')
@@ -14,11 +15,12 @@ def find_page_number(url):
     header = re.sub('[^0-9]', '', header)
     return math.ceil(int(header)/100)
 
-
+# this function is used to generate csv files
 def create(basic_url, file_name):
     page_number = find_page_number(basic_url)
     print('Number of pages: %d' % page_number)
 
+    # it is used to escape None values
     def xstr(s):
         if s is None:
             return ''
